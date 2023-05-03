@@ -16,7 +16,7 @@ using UnityEngine;
     {
         
     }
-}*/
+}
 
 
 
@@ -26,4 +26,4 @@ using UnityEngine;
 public class GridObjectCollection : Microsoft.MixedReality.Toolkit.Utilities.BaseObjectCollection
 { }
     public abstract class BaseObjectCollection : UnityEngine.MonoBehaviour
-{ }
+{ }*/

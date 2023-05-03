@@ -15,7 +15,7 @@ using UnityEngine;
     {
         
     }
-}*/
+}
 
 [UnityEngine.AddComponentMenu("Scripts/MRTK/SDK/GridObjectCollection")]
 [UnityEngine.ExecuteAlways]
@@ -23,4 +23,4 @@ using UnityEngine;
 public class GridObjectCollection : Microsoft.MixedReality.Toolkit.Utilities.BaseObjectCollection
 { }
         public abstract class BaseObjectCollection : UnityEngine.MonoBehaviour
-{ }
+{ }*/
