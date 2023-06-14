@@ -1,16 +1,14 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
-
-
-
+/*
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.UI;
 using UnityEngine;
 
 namespace Microsoft.MixedReality.Toolkit.Examples.Demos
 {
-    [AddComponentMenu("Scripts/MRTK/Examples/HandInteractionTouch")]
-    public class HandInteractionTouch : MonoBehaviour, IMixedRealityTouchHandler
+    [AddComponentMenu("Scripts/MRTK/Examples/HandInteractionTouch)]
+    public class HandInteractionTouch_CHANGED : MonoBehaviour, IMixedRealityTouchHandler
     {
         [SerializeField]
         private TextMesh debugMessage = null;
@@ -30,16 +28,8 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
         protected float duration = 1.5f;
         protected float t = 0;
 
-        //---------------------------------------------------------//
-        private CubeManager cubeManager;
-        //---------------------------------------------------------//
-
         private void Start()
         {
-            //---------------------------------------------------------//
-            cubeManager = GameObject.Find("CubeManager").GetComponent<CubeManager>();
-            //---------------------------------------------------------//
-
             TargetRenderer = GetComponentInChildren<Renderer>();
             if ((TargetRenderer != null) && (TargetRenderer.sharedMaterial != null))
             {
@@ -66,11 +56,6 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
         void IMixedRealityTouchHandler.OnTouchStarted(HandTrackingInputEventData eventData)
         {
             OnTouchStarted.Invoke(eventData);
-
-            //---------------------------------------------------------//
-            cubeManager.HandleCubeTouch();
-            //---------------------------------------------------------//
-
 
             if (debugMessage != null)
             {
@@ -100,3 +85,4 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
         }
     }
 }
+*/
