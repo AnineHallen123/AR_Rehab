@@ -7,6 +7,9 @@ public class CubeManager : MonoBehaviour
     public GameObject[] cubes;
     public Material initialMaterial;
     public Material litUpMaterial;
+
+    int randomIndexOld = 1;
+    int randomIndexNew = 0;
     
     void Start()
     {
@@ -15,17 +18,44 @@ public class CubeManager : MonoBehaviour
     }
 
 
-    private void LightUpRandomCube()
+    public void LightUpRandomCube()
     {
-        int randomIndex = Random.Range(0, cubes.Length);
+        randomIndexNew = Random.Range(0, cubes.Length);
+        /*
+        while(randomIndexNew == randomIndexOld){
+            randomIndexNew = Random.Range(0, cubes.Length);
+            Debug.Log("New Generated " + randomIndexNew + " " + randomIndexOld);
+        }
+        */
 
-        GameObject randomCube = cubes[randomIndex];
+        //------
+        if (randomIndexNew == randomIndexOld)
+        {
+            randomIndexNew = Random.Range(0, cubes.Length);
+
+            if (randomIndexNew == randomIndexOld)
+            {
+                randomIndexNew = Random.Range(0, cubes.Length);
+            }
+        }
+
+        //------
+
+
+        GameObject randomCube = cubes[randomIndexNew];
         Renderer cubeRenderer = randomCube.GetComponent<Renderer>();
         cubeRenderer.material = litUpMaterial;
+
+        randomIndexOld = randomIndexNew;
+        Debug.Log("newCube");
+            
+
+        
     }
 
     public void HandleCubeTouch()
     {
+
         foreach (GameObject cube in cubes)
         {
             Renderer cubeRenderer = cube.GetComponent<Renderer>();
