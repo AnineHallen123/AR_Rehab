@@ -8,6 +8,10 @@ public class CubeManager : MonoBehaviour
     public Material initialMaterial;
     public Material litUpMaterial;
 
+    //19/06
+    public GameObject[] particles;
+    
+
     int randomIndexOld = 1;
     int randomIndexNew = 0;
     
@@ -27,16 +31,25 @@ public class CubeManager : MonoBehaviour
             Debug.Log("New Generated " + randomIndexNew + " " + randomIndexOld);
         }
         */
+        
 
         //------
+        
+        if (randomIndexNew == randomIndexOld)
+        {
+            randomIndexNew = Random.Range(0, cubes.Length);   
+        }
         if (randomIndexNew == randomIndexOld)
         {
             randomIndexNew = Random.Range(0, cubes.Length);
-
-            if (randomIndexNew == randomIndexOld)
-            {
-                randomIndexNew = Random.Range(0, cubes.Length);
-            }
+        }
+        if (randomIndexNew == randomIndexOld)
+        {
+            randomIndexNew = Random.Range(0, cubes.Length);
+        }
+        if (randomIndexNew == randomIndexOld)
+        {
+            randomIndexNew = Random.Range(0, cubes.Length);
         }
 
         //------
@@ -45,6 +58,15 @@ public class CubeManager : MonoBehaviour
         GameObject randomCube = cubes[randomIndexNew];
         Renderer cubeRenderer = randomCube.GetComponent<Renderer>();
         cubeRenderer.material = litUpMaterial;
+        //19/06
+        
+        foreach (GameObject particle in particles)
+        {
+            particle.SetActive(false);
+        }
+        particles[randomIndexNew].SetActive(true);
+        
+        
 
         randomIndexOld = randomIndexNew;
         Debug.Log("newCube");
