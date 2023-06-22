@@ -9,6 +9,8 @@ public class TimeExcercise : MonoBehaviour
 {
     public float excerciseTime = 90;
     public TextMeshProUGUI timeText;
+
+    int _counter;
     void Update()
     {
 
@@ -23,8 +25,6 @@ public class TimeExcercise : MonoBehaviour
 
         }
 
-        DisplayTime(excerciseTime);
-       
     }
 
     void DisplayTime(float timeToDisplay)
@@ -39,4 +39,8 @@ public class TimeExcercise : MonoBehaviour
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-}
+
+    }
+
+
+
