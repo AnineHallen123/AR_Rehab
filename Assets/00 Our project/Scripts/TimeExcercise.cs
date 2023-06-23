@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 
 public class TimeExcercise : MonoBehaviour
 {
-    public float excerciseTime = 90;
-    public TextMeshProUGUI timeText;
-
+    public float excerciseTime;
+    public TextMeshPro timeText;
+    public UnityEvent TimerOver;
     int _counter;
     void Update()
     {
@@ -22,8 +23,10 @@ public class TimeExcercise : MonoBehaviour
         else
         {
             excerciseTime = 0;
+            TimerOver.Invoke();
 
         }
+        DisplayTime(excerciseTime);
 
     }
 
@@ -39,6 +42,13 @@ public class TimeExcercise : MonoBehaviour
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    public void resetTimer()
+    {
+        excerciseTime = 60;
+
+    }
+
 
     }
 
