@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/00 Our project/Scenes/Main exercise.unity
+    path: Assets/00 Our project/Scenes/Main exercise UI.unity
     guid: 486610aac92374982b6cce87e62b814e
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 482322e150907ba468ae66cde27cecf2, type: 2}
